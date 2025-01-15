@@ -31,4 +31,12 @@ public class Vereine {
         this.name = name;
     }
 
+    public String getStadt() {
+        return stadt;
+    }
+
+    public void setStadt(String stadt) {
+        this.stadt = stadt;
+    }
+
 }
