@@ -46,4 +46,9 @@ public class Vereine {
     public void setSpielers(List<Spieler> spielers) {
         this.spielers = spielers;
     }
+
+    @Override
+    public String toString() {
+        return "Character{id=" + id + ", name='" + name + "', Stadt='" + stadt + "', spielers=" + spielers + '}';
+    }
 }
