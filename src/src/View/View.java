@@ -82,5 +82,13 @@ public class View {
         }
     }
 
+    private void viewSpielers() {
+        List<Spielers> spielers = service.getSpielers();
+        if (spielers.isEmpty()) {
+            System.out.println("No spielers available.");
+        } else {
+            spielers.forEach(System.out::println);
+        }
+    }
 
 }
