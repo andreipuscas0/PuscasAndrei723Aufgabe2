@@ -36,7 +36,7 @@ public class View {
 
         switch (choice) {
             case 1 -> addSpieler(scanner);
-            case 2 -> editSpieler(scanner);
+            case 2 -> updateSpieler(scanner);
             case 3 -> deleteSpieler(scanner);
             case 4 -> viewSpielers();
             default -> System.out.println("Invalid choice.");
@@ -53,7 +53,23 @@ public class View {
         System.out.print("Enter Marktwert: ");
         double marktwert = scanner.nextDouble();
         service.addSpieler(new Spieler(name, age, position, marktwert));
-        System.out.println("Product added successfully.");
+        System.out.println("Spieler added successfully.");
+    }
+
+    private void updateSpieler(Scanner scanner) {
+        System.out.print("Enter Spieler Name to Edit: ");
+        String name = scanner.next();
+        System.out.print("Enter New Age: ");
+        double  age = scanner.nextDouble();
+        System.out.print("Enter New Position: ");
+        String position = scanner.next();
+        System.out.print("Enter New Marktwert: ");
+        double marktwert = scanner.nextDouble();
+        if (service.updateSpieler(name, age, position, marktwert)) {
+            System.out.println("Spieler updated successfully.");
+        } else {
+            System.out.println("Spieler not found.");
+        }
     }
 
 }
