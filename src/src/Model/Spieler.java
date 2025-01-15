@@ -45,4 +45,7 @@ public class Spieler {
         this.marktwert = marktwert;
     }
 
+    public String toString() {
+        return "Product{name='" + name + "', age=" + age + ", position'" + position + "', marktwert=" + marktwert + "''}";
+    }
 }
