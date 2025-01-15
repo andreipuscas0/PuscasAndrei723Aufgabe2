@@ -26,5 +26,9 @@ public class Service {
                 }).orElse(false);
     }
 
+    public boolean deleteSpieler(String name) {
+        return spieler.removeIf(spieler -> spieler.getName().equals(name));
+    }
+
 
 }
