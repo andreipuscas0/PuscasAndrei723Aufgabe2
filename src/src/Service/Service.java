@@ -14,7 +14,17 @@ public class Service {
         spielers.add(spieler);
     }
 
-
+    public boolean updateSpieler(String name, double newAge, String newPosition, String newMarktwert) {
+        return spielers.stream()
+                .filter(spieler -> spieler.getName().equals(name))
+                .findFirst()
+                .map(spieler -> {
+                    spieler.setAge(newAge);
+                    spieler.setPosition(newPosition);
+                    spieler.setMarktwert(newMarktwert);
+                    return true;
+                }).orElse(false);
+    }
 
 
 }
