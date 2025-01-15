@@ -91,4 +91,16 @@ public class View {
         }
     }
 
+    public void filterVereinesByStadt(Scanner scanner) {
+        System.out.print("Enter Stadt to filter Vereines: ");
+        String stadt = scanner.next();
+        List<Vereines> filteredVereines = service.filterVereinesByStadt(stadt);
+
+        if (filteredVereines.isEmpty()) {
+            System.out.println("No Vereines found in this stadt.");
+        } else {
+            System.out.println("Vereines from stadt \"" + stadt + "\":");
+            filteredVereines.forEach(System.out::println);
+        }
+    }
 }
