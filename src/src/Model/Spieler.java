@@ -6,7 +6,7 @@ public class Spieler {
     private String position;
     public int marktwert;
 
-    public Spieler(String name, double age, String position, double marktwert) {
+    public Spieler(String name, int age, String position, int marktwert) {
         this.name = name;
         this.age = (int) age;
         this.position = position;
