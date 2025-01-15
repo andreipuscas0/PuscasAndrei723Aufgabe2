@@ -39,4 +39,11 @@ public class Vereine {
         this.stadt = stadt;
     }
 
+    public List<Spieler> getSpielers() {
+        return spielers;
+    }
+
+    public void setSpielers(List<Spieler> spielers) {
+        this.spielers = spielers;
+    }
 }
