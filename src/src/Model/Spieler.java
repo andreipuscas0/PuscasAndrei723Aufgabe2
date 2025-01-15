@@ -12,4 +12,10 @@ public class Spieler {
         this.position = position;
         this.marktwert = marktwert;
     }
+
+    public String getName() {
+        return name;
+    }
+
+
 }
