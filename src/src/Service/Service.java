@@ -34,4 +34,27 @@ public class Service {
         return new ArrayList<>(spielers);
     }
 
+    public void addVereine(Vereine vereine) {
+        vereines.add(vereine);
+    }
+
+    public boolean updateVereine(int id, String newName, String newStadt, List<Spielers> newSpielers) {
+        return vereines.stream()
+                .filter(vereine -> vereine.getId() == id)
+                .findFirst()
+                .map(vereine -> {
+                    vereine.setName(newName);
+                    vereine.setStadt(newStadt);
+                    vereine.setSpielers(newSpielers);
+                    return true;
+                }).orElse(false);
+    }
+
+    public boolean deleteCharacter(int id) {
+        return vereine.removeIf(vereine -> vereine.getId() == id);
+    }
+
+    public List<Character> getVereines() {
+        return new ArrayList<>(vereines);
+    }
 }
