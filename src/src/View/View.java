@@ -72,4 +72,15 @@ public class View {
         }
     }
 
+    private void deleteSpieler(Scanner scanner) {
+        System.out.print("Enter Spieler Name to Delete: ");
+        String name = scanner.next();
+        if (service.deleteSpieler(name)) {
+            System.out.println("Spieler deleted successfully.");
+        } else {
+            System.out.println("Spieler not found.");
+        }
+    }
+
+
 }
