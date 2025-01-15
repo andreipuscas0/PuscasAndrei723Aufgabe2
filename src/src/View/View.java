@@ -25,4 +25,22 @@ public class View {
         System.out.print("Choose an option: ");
     }
 
+    public void manageSpielers(Scanner scanner) {
+        System.out.println("\nManage Products");
+        System.out.println("1. Add Spieler");
+        System.out.println("2. Edit Spieler");
+        System.out.println("3. Delete Spieler");
+        System.out.println("4. View Spielers");
+        System.out.print("Choose an option: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1 -> addSpieler(scanner);
+            case 2 -> editSpieler(scanner);
+            case 3 -> deleteSpieler(scanner);
+            case 4 -> viewSpielers();
+            default -> System.out.println("Invalid choice.");
+        }
+    }
+
 }
