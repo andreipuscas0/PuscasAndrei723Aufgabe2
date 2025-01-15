@@ -14,4 +14,14 @@ public class Vereine {
         this.stadt = stadt;
         this.spielers = spielers;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 }
