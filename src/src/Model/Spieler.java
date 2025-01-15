@@ -37,5 +37,12 @@ public class Spieler {
         this.position = position;
     }
 
+    public int getMarktwert() {
+        return marktwert;
+    }
+
+    public void setMarktwert(int marktwert) {
+        this.marktwert = marktwert;
+    }
 
 }
