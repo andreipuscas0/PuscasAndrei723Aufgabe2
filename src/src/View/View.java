@@ -43,4 +43,17 @@ public class View {
         }
     }
 
+    private void addSpieler(Scanner scanner) {
+        System.out.print("Enter Spieler Name: ");
+        String name = scanner.next();
+        System.out.print("Enter Age: ");
+        double age = scanner.nextDouble();
+        System.out.print("Enter Position: ");
+        String position = scanner.next();
+        System.out.print("Enter Marktwert: ");
+        double marktwert = scanner.nextDouble();
+        service.addSpieler(new Spieler(name, age, position, marktwert));
+        System.out.println("Product added successfully.");
+    }
+
 }
