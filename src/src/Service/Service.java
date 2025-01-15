@@ -30,5 +30,8 @@ public class Service {
         return spieler.removeIf(spieler -> spieler.getName().equals(name));
     }
 
+    public List<Spieler> getSpielers() {
+        return new ArrayList<>(spielers);
+    }
 
 }
