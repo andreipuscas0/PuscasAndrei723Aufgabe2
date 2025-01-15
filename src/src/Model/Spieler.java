@@ -45,6 +45,7 @@ public class Spieler {
         this.marktwert = marktwert;
     }
 
+    @Override
     public String toString() {
         return "Product{name='" + name + "', age=" + age + ", position'" + position + "', marktwert=" + marktwert + "''}";
     }
