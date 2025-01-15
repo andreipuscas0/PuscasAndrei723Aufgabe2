@@ -6,11 +6,11 @@ public class Spieler {
     private String position;
     public int marktwert;
 
-    public Spieler(String name, int age, String position, int marktwert) {
+    public Spieler(String name, double age, String position, double marktwert) {
         this.name = name;
-        this.age = age;
+        this.age = (int) age;
         this.position = position;
-        this.marktwert = marktwert;
+        this.marktwert = (int) marktwert;
     }
 
     public String getName() {

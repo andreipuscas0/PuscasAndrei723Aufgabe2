@@ -4,7 +4,6 @@ import Model.Spieler;
 import Model.Vereine;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Service {
     private final List<Spieler> spielers = new ArrayList<>();
@@ -14,20 +13,20 @@ public class Service {
         spielers.add(spieler);
     }
 
-    public boolean updateSpieler(String name, double newAge, String newPosition, String newMarktwert) {
+    public boolean updateSpieler(String name, double newAge, String newPosition, double newMarktwert) {
         return spielers.stream()
                 .filter(spieler -> spieler.getName().equals(name))
                 .findFirst()
                 .map(spieler -> {
-                    spieler.setAge(newAge);
+                    spieler.setAge((int) newAge);
                     spieler.setPosition(newPosition);
-                    spieler.setMarktwert(newMarktwert);
+                    spieler.setMarktwert((int) newMarktwert);
                     return true;
                 }).orElse(false);
     }
 
     public boolean deleteSpieler(String name) {
-        return spieler.removeIf(spieler -> spieler.getName().equals(name));
+        return spielers.removeIf(spieler -> spieler.getName().equals(name));
     }
 
     public List<Spieler> getSpielers() {
@@ -38,23 +37,25 @@ public class Service {
         vereines.add(vereine);
     }
 
-    public boolean updateVereine(int id, String newName, String newStadt, List<Spielers> newSpielers) {
+    public boolean updateVereine(int id, String newName, String newStadt, List<Spieler> newSpieler) {
         return vereines.stream()
                 .filter(vereine -> vereine.getId() == id)
                 .findFirst()
                 .map(vereine -> {
                     vereine.setName(newName);
                     vereine.setStadt(newStadt);
-                    vereine.setSpielers(newSpielers);
+                    vereine.setSpielers(newSpieler);
                     return true;
                 }).orElse(false);
     }
 
     public boolean deleteCharacter(int id) {
-        return vereine.removeIf(vereine -> vereine.getId() == id);
+        return vereines.removeIf(vereine -> vereine.getId() == id);
     }
 
-    public List<Character> getVereines() {
+    public List<Vereine> getVereines() {
         return new ArrayList<>(vereines);
     }
+
+
 }

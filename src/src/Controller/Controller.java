@@ -25,8 +25,8 @@ public class Controller {
             switch (choice) {
                 case 1 -> view.manageSpielers(scanner);
 //                case 2 -> view.manageVereines(scanner);
-                case 3 -> view.filterVereinesByStadt(scanner);
-                case 4 -> view.findSpielersByName(scanner);
+//                case 3 -> view.filterVereinesByStadt(scanner);
+//                case 4 -> view.findSpielersByName(scanner);
 //                case 5 -> view.sort(scanner);
                 case 0 -> System.out.println("Exiting...");
                 default -> System.out.println("Invalid choice. Try again.");
