@@ -103,4 +103,19 @@ public class View {
             filteredVereines.forEach(System.out::println);
         }
     }
+
+    public void findSpielersByName(Scanner scanner) {
+        System.out.print("Enter Name von Benutzer to find Spielers: ");
+        String SpielerName = scanner.next();
+        List<Character> vereineWithName = service.findSpielersByName(SpielerName);
+
+        if (vereineWithName.isEmpty()) {
+            System.out.println("No Vereine found with this Spieler Name.");
+        } else {
+            System.out.println("Vereine with this Spieler Name \"" + SpielerName + "\":");
+            vereineWithName.forEach(System.out::println);
+        }
+    }
+
+
 }
